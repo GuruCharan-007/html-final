@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHub - Domain Selection</title>
+
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fdfa;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    .box {
+      background: white;
+      border-radius: 12px;
+      border-left: 5px solid #006466;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+      width: 360px;
+      margin: 40px auto;
+      /* Positioned just like patient-login */
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .buttons a {
+      background-color: #006466;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      display: block;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .buttons a:hover {
+      background-color: #003944;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="carehub-logo.png" alt="CareHub Logo">
+      <div class="header-text">
+        <h1>CareHub</h1>
+        <p>Online Medical Consultation System</p>
+      </div>
+      <div class="header-controls">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="box">
+      <h2>Select Domain</h2>
+      <div class="buttons">
+        <a href="patient-login.html">Patient</a>
+        <a href="doctor-login.html">Doctor</a>
+        <a href="pharmacist-login.html">Pharmacist</a>
+        <a href="admin-login.html">Admin</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>

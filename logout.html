@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHub - Logout</title>
+
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="carehub-logo.png" alt="CareHub Logo">
+      <div class="header-text">
+        <h1>CareHub</h1>
+        <p>Online Medical Consultation System</p>
+      </div>
+      <div class="header-controls">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1;display:flex;justify-content:center;align-items:center;min-height:80vh;flex-direction:column;">
+    <div class="box" style="text-align:center;max-width:400px;border-left:5px solid #006466;">
+      <div style="font-size:48px;margin-bottom:10px;">✅</div>
+      <h2 style="color:#003944;margin-top:0;">Logged Out Successfully</h2>
+      <p style="color:#666;margin-bottom:20px;">You will be redirected to the login page in <span id="timer">3</span>
+        seconds...</p>
+
+      <a href="domain-select.html"
+        style="display:inline-block;background-color:#006466;color:white;padding:12px 25px;text-decoration:none;border-radius:6px;font-weight:600;">Login
+        Again Now</a>
+    </div>
+  </main>
+
+  <script>
+    let count = 3;
+    const timer = document.getElementById('timer');
+    setInterval(() => {
+      count--;
+      timer.innerText = count;
+      if (count <= 0) {
+        window.location.href = 'domain-select.html';
+      }
+    }, 1000);
+  </script>
+
+</body>
+
+</html>

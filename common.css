@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #003944;
+}
+
+nav a {
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background-color: #006466;
+  text-decoration: none;
+  color: white;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-left: 5px solid #006466;
+  color: #003944;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(150%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+  font-weight: 600;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+header {
+  background-color: #006466;
+  color: white;
+  padding: 20px 0;
+}
+
+a {
+  color: #006466;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #003944;
+}
+
+nav a.active {
+  color: #5eead4;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.header-inner img {
+  width: 42px;
+  height: 42px;
+}
+
+.header-text h1 {
+  margin: 0;
+}
+
+.header-text p {
+  margin: 4px 0 0;
+}
+
+.header-controls {
+  position: absolute;
+  right: 20px;
+}
+
+.header-controls button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 6px 12px;
+  width: auto;
+  /* Explicitly prevent full-width */
+  display: inline-block;
+  /* Ensure side-by-side alignment */
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: all 0.2s ease;
+}
+
+.header-controls button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+.header-controls button:active {
+  transform: translateY(0);
+}
+
+form {
+  margin-top: 40px;
+}
+
+.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark header {
+  background-color: #1f1f1f;
+  /* Neutral Header */
+  border-bottom: 1px solid #333;
+}
+
+.dark nav {
+  background-color: #2d2d2d;
+}
+
+.dark .box,
+.dark form,
+.dark .sidebar,
+.dark main,
+.dark section {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: #ffffff;
+}
+
+.dark p,
+.dark li,
+.dark label,
+.dark td {
+  color: #b0b0b0;
+}
+
+.dark a {
+  color: #8cddd6;
+  /* Softer Teal */
+}
+
+.dark a:hover {
+  color: #5eead4;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.dark th {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border-bottom: 1px solid #444;
+}
+
+.dark button {
+  background-color: #006466;
+  /* Keep brand color for primary actions */
+  border: 1px solid #004d4f;
+  color: white;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}

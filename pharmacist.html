@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHub - Pharmacist Panel</title>
+
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
+
+  <style>
+    .page-heading {
+      background-color: #003944;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 700;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      background: white;
+      padding: 20px;
+      border-right: 3px solid #006466;
+    }
+
+    .sidebar h3 {
+      color: #003944;
+      border-bottom: 2px solid #9EF0F0;
+      padding-bottom: 6px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar a {
+      color: #006466;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .box {
+      background: white;
+      border-left: 4px solid #006466;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #006466;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="carehub-logo.png" alt="CareHub Logo">
+      <div class="header-text">
+        <h1>CareHub</h1>
+        <p>Online Medical Consultation System</p>
+      </div>
+      <div class="header-controls">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-heading">Pharmacist Panel</div>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="#orders">Medicine Orders</a></li>
+        <li><a href="delivery-tracking.html">Delivery Tracking</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <div class="box" id="orders">
+        <h2>Create Medicine Order</h2>
+        <input id="patient" placeholder="Patient Name"><br><br>
+        <input id="medicine" placeholder="Medicines"><br><br>
+        <button onclick="createOrder()">Create Order</button>
+      </div>
+
+      <div class="box">
+        <h2>Existing Orders</h2>
+        <table id="orderTable">
+          <tr>
+            <th>Patient</th>
+            <th>Medicines</th>
+            <th>Status</th>
+          </tr>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    let orders = JSON.parse(localStorage.getItem("deliveries")) || [];
+
+    function renderOrders() {
+      orderTable.innerHTML = `
+    <tr><th>Patient</th><th>Medicines</th><th>Status</th></tr>
+  `;
+      orders.forEach(o => {
+        orderTable.innerHTML += `
+      <tr>
+        <td>${o.patient}</td>
+        <td>${o.medicines}</td>
+        <td>${o.status}</td>
+      </tr>
+    `;
+      });
+    }
+
+    function createOrder() {
+      orders.push({
+        patient: patient.value,
+        medicines: medicine.value,
+        status: "Pending"
+      });
+      localStorage.setItem("deliveries", JSON.stringify(orders));
+      patient.value = "";
+      medicine.value = "";
+      renderOrders();
+      showToast("Medicine Order Created!");
+    }
+
+    renderOrders();
+  </script>
+
+</body>
+
+</html>

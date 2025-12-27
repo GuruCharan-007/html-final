@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareHub - Admin Login</title>
+
+    <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
+
+    <style>
+        form {
+            width: 400px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #006466;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #99bdbc;
+        }
+
+        button {
+            width: 100%;
+            background-color: #006466;
+            color: white;
+            border: none;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003944;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <img src="carehub-logo.png" alt="CareHub Logo">
+            <div class="header-text">
+                <h1>CareHub</h1>
+                <p>Online Medical Consultation System</p>
+            </div>
+            <div class="header-controls">
+                <button onclick="toggleDarkMode()">🌙</button>
+                <button onclick="increaseFont()">A+</button>
+                <button onclick="decreaseFont()">A-</button>
+            </div>
+        </div>
+    </header>
+
+    <form action="admin-panel.html">
+        <h2 style="text-align:center;color:#003944;">Admin Login</h2>
+
+        <label>Username</label>
+        <input type="text" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+
+</html>

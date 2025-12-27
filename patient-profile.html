@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHub - Patient Profile</title>
+
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
+
+  <style>
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #003944;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      background-color: #006466;
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      background-color: white;
+      padding: 20px;
+      border-right: 3px solid #006466;
+    }
+
+    .sidebar h3 {
+      color: #003944;
+      border-bottom: 2px solid #9EF0F0;
+      padding-bottom: 5px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    .sidebar li {
+      margin: 12px 0;
+    }
+
+    .sidebar a {
+      color: #006466;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .content {
+      padding-right: 20px;
+    }
+
+    .box {
+      background: white;
+      border: 1px solid #99bdbc;
+      border-left: 4px solid #006466;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .box h2 {
+      color: #003944;
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="carehub-logo.png" alt="CareHub Logo">
+      <div class="header-text">
+        <h1>CareHub</h1>
+        <p>Online Medical Consultation System</p>
+      </div>
+      <div class="header-controls">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="patient-profile.html" class="active">Profile</a>
+    <a href="patient-home.html">Home</a>
+    <a href="delivery-tracking.html">Medicine Tracking</a>
+  </nav>
+
+  <main class="profile-layout">
+
+    <aside class="sidebar">
+      <h3>User Menu</h3>
+      <ul>
+        <li><a href="#overview">Profile</a></li>
+        <li><a href="#prescription">Prescription</a></li>
+        <li><a href="#records">Previous Records</a></li>
+        <li><a href="#reports">Lab Reports</a></li>
+        <li><a href="logout.html">Log Out</a></li>
+      </ul>
+    </aside>
+
+    <div class="content">
+
+      <div id="overview" class="box">
+        <h2>Profile Overview</h2>
+        <p>Name: Charan Kondaveti</p>
+        <p>Email: charan1234@gmail.com</p>
+      </div>
+
+      <div id="prescription" class="box">
+        <h2>Prescription</h2>
+        <a href="#">Prescription - 2025/09/12</a><br>
+        <a href="#">Prescription - 2025/10/03</a>
+      </div>
+
+      <div id="records" class="box">
+        <h2>Previous Records</h2>
+        <a href="#">Physiotherapy - 2024/06/22</a><br>
+        <a href="#">Dental Checkup - 2024/09/28</a>
+      </div>
+
+      <div id="reports" class="box">
+        <h2>Lab Reports</h2>
+        <a href="#">Blood Report - 2025/09/12</a><br>
+        <a href="#">X-ray Report - 2025/03/03</a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareHub - Admin Panel</title>
+
+    <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
+
+    <style>
+        .page-heading {
+            background-color: #003944;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            font-weight: 700;
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background-color: white;
+            padding: 20px;
+            border-right: 3px solid #006466;
+        }
+
+        .sidebar h3 {
+            color: #003944;
+            border-bottom: 2px solid #9EF0F0;
+            padding-bottom: 5px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .sidebar li {
+            margin: 12px 0;
+        }
+
+        .sidebar a {
+            color: #006466;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            padding-right: 20px;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #99bdbc;
+            border-left: 4px solid #006466;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h2 {
+            color: #003944;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #dceeee;
+            text-align: left;
+        }
+
+        th {
+            background: #006466;
+            color: white;
+        }
+
+        .add-btn {
+            background: #006466;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .add-btn:hover {
+            background: #003944;
+        }
+
+        .remove-btn {
+            background: #c62828;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background: #8c1c1c;
+        }
+
+        .settings-input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #99bdbc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <img src="carehub-logo.png" alt="CareHub Logo">
+            <div class="header-text">
+                <h1>CareHub</h1>
+                <p>Online Medical Consultation System</p>
+            </div>
+            <div class="header-controls">
+                <button onclick="toggleDarkMode()">🌙</button>
+                <button onclick="increaseFont()">A+</button>
+                <button onclick="decreaseFont()">A-</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-heading">Administration Panel</div>
+
+    <main class="profile-layout">
+
+        <aside class="sidebar">
+            <h3>Admin Menu</h3>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#patients">Patients</a></li>
+                <li><a href="#pharmacists">Pharmacists</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+
+            <div class="box" id="dashboard">
+                <h2>Dashboard Summary</h2>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>Doctors</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Patients</td>
+                        <td>56</td>
+                    </tr>
+                    <tr>
+                        <td>Pharmacists</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Appointments Today</td>
+                        <td>9</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box" id="doctors">
+                <h2>Doctors</h2>
+                <button class="add-btn">+ Add Doctor</button>
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Specialty</th>
+                        <th>Experience</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Dr. Anjali</td>
+                        <td>General Physician</td>
+                        <td>10 years</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Rajiv</td>
+                        <td>Cardiologist</td>
+                        <td>15 years</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box" id="patients">
+                <h2>Patients</h2>
+                <button class="add-btn">+ Add Patient</button>
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Arjun</td>
+                        <td>24</td>
+                        <td>arjun@gmail.com</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Meera</td>
+                        <td>32</td>
+                        <td>meera@yahoo.com</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box" id="pharmacists">
+                <h2>Pharmacists</h2>
+                <button class="add-btn">+ Add Pharmacist</button>
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Ravi Kumar</td>
+                        <td>ravi@carehub.com</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Lakshmi</td>
+                        <td>lakshmi@carehub.com</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box" id="settings">
+                <h2>Settings</h2>
+
+                <label>Admin Email:</label>
+                <input type="email" class="settings-input" placeholder="Enter Email">
+
+                <label>New Password:</label>
+                <input type="password" class="settings-input" placeholder="Enter new password">
+
+                <button class="add-btn">Save Changes</button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

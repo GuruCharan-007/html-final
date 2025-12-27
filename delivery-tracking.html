@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareHub - Delivery Tracking</title>
+
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
+
+  <style>
+    .container {
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #006466;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="carehub-logo.png" alt="CareHub Logo">
+      <div class="header-text">
+        <h1>CareHub</h1>
+        <p>Online Medical Consultation System</p>
+      </div>
+      <div class="header-controls">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="patient-profile.html">Profile</a>
+    <a href="patient-home.html">Home</a>
+    <a href="delivery-tracking.html" class="active">Medicine Tracking</a>
+  </nav>
+
+  <div class="container">
+    <h2>Delivery Status</h2>
+    <table id="trackTable">
+      <tr>
+        <th>Patient</th>
+        <th>Medicines</th>
+        <th>Status</th>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    let data = JSON.parse(localStorage.getItem("deliveries")) || [];
+
+    data.forEach(d => {
+      trackTable.innerHTML += `
+    <tr>
+      <td>${d.patient}</td>
+      <td>${d.medicines}</td>
+      <td>${d.status}</td>
+    </tr>
+  `;
+    });
+  </script>
+
+</body>
+
+</html>

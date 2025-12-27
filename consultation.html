@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareHub - Consultation Booked</title>
+
+    <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <img src="carehub-logo.png" alt="CareHub Logo">
+            <div class="header-text">
+                <h1>CareHub</h1>
+                <p>Online Medical Consultation System</p>
+            </div>
+            <div class="header-controls">
+                <button onclick="toggleDarkMode()">🌙</button>
+                <button onclick="increaseFont()">A+</button>
+                <button onclick="decreaseFont()">A-</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="flex:1;display:flex;justify-content:center;align-items:center;min-height:80vh;flex-direction:column;">
+        <div class="box" style="text-align:center;max-width:400px;border-left:5px solid #006466;">
+            <div style="font-size:48px;margin-bottom:10px;">✅</div>
+            <h2 style="color:#003944;margin-top:0;">Consultation Booked Successfully</h2>
+            <p style="color:#666;margin-bottom:20px;">Your appointment has been confirmed. You will receive an email
+                with details shortly.</p>
+
+            <div class="buttons" style="display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
+                <a href="logout.html"
+                    style="background-color:#006466;color:white;text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:600;">Log
+                    Out</a>
+                <a href="patient-home.html"
+                    style="background-color:#006466;color:white;text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:600;">Return
+                    to Home</a>
+            </div>
+
+            <p style="font-size:0.9rem;color:#006466;margin-top:20px;">Thank you for using CareHub. Stay healthy and
+                connected!</p>
+        </div>
+    </main>
+
+</body>
+
+</html>
