@@ -4,9 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .links-section {
+            margin-top: 30px;
+        }
+        .links-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .link-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+            text-align: center;
+            font-weight: 500;
+        }
+        .link-btn:hover {
+            background: #764ba2;
+            border-color: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .category {
+            margin-bottom: 25px;
+        }
+        .category-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Healthcare System</h1>
-    <p>This is the documentation page for the healthcare system.</p>
+    <div class="container">
+        <h1>Healthcare System</h1>
+        <p class="subtitle">Medical Management Portal</p>
+        
+        <div class="links-section">
+            <h2>Access Portal</h2>
+            
+            <div class="category">
+                <div class="category-title">Patient Module</div>
+                <div class="links-grid">
+                    <a href="../patient-login.html" class="link-btn">Patient Login</a>
+                    <a href="../patient-home.html" class="link-btn">Patient Home</a>
+                    <a href="../patient-profile.html" class="link-btn">Patient Profile</a>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-title">Doctor Module</div>
+                <div class="links-grid">
+                    <a href="../doctor-login.html" class="link-btn">Doctor Login</a>
+                    <a href="../doctor.html" class="link-btn">Doctor Dashboard</a>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-title">Pharmacist Module</div>
+                <div class="links-grid">
+                    <a href="../pharmacist-login.html" class="link-btn">Pharmacist Login</a>
+                    <a href="../pharmacist.html" class="link-btn">Pharmacist Dashboard</a>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-title">Admin Module</div>
+                <div class="links-grid">
+                    <a href="../admin-login.html" class="link-btn">Admin Login</a>
+                    <a href="../admin-panel.html" class="link-btn">Admin Panel</a>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-title">Additional Features</div>
+                <div class="links-grid">
+                    <a href="../domain-select.html" class="link-btn">Domain Select</a>
+                    <a href="../consultation.html" class="link-btn">Consultation</a>
+                    <a href="../delivery-tracking.html" class="link-btn">Delivery Tracking</a>
+                    <a href="../logout.html" class="link-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
